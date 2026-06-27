@@ -1,4 +1,3 @@
-Claro! Segue o texto atualizado com seu GitHub e seu e-mail:
 
 💻 Programação e Algoritmos | Construindo a Lógica
 
