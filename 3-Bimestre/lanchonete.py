@@ -1,21 +1,5 @@
-"""
-Sistema Lanchonete - 3º Bimestre
-Programação e Algoritmo
+"""Sistema Lanchonete - 3º Bimestre - Turma A"""
 
-Turma A:
-- Alterar preço de produto
-- Remover produto
-- Pesquisar produto por nome
-- Relatório de vendas
-
-Sistema simples, feito apenas com recursos básicos do Python,
-para facilitar o estudo e os testes em sala de aula.
-"""
-
-from datetime import datetime
-
-
-# Lista de produtos cadastrados
 produtos = [
     {"id": 1, "nome": "X-Burger", "preco": 15.00},
     {"id": 2, "nome": "X-Salada", "preco": 17.00},
@@ -23,78 +7,61 @@ produtos = [
     {"id": 4, "nome": "Refrigerante", "preco": 6.00},
 ]
 
-# Lista de vendas realizadas
 vendas = []
 
 
 def listar_produtos():
-    """Exibe todos os produtos cadastrados."""
+    """Lista os produtos cadastrados."""
     print("\n--- PRODUTOS ---")
-    if not produtos:
-        print("Nenhum produto cadastrado.")
-        return
-
     for produto in produtos:
         print(f"ID: {produto['id']} | {produto['nome']} | R$ {produto['preco']:.2f}")
 
 
 def alterar_preco():
-    """Altera o preço de um produto pelo ID."""
+    """Turma A: altera o preço de um produto."""
     listar_produtos()
-
     try:
         produto_id = int(input("Digite o ID do produto: "))
         novo_preco = float(input("Digite o novo preço: R$ "))
     except ValueError:
-        print("Erro: digite valores válidos.")
+        print("Digite valores válidos.")
         return
 
     if novo_preco < 0:
-        print("Erro: o preço não pode ser negativo.")
+        print("O preço não pode ser negativo.")
         return
 
     for produto in produtos:
         if produto["id"] == produto_id:
             produto["preco"] = novo_preco
-            print(f"Preço de '{produto['nome']}' alterado com sucesso!")
+            print("Preço alterado com sucesso!")
             return
-
     print("Produto não encontrado.")
 
 
 def remover_produto():
-    """Remove um produto pelo ID."""
+    """Turma A: remove um produto."""
     listar_produtos()
-
     try:
-        produto_id = int(input("Digite o ID do produto que deseja remover: "))
+        produto_id = int(input("Digite o ID do produto: "))
     except ValueError:
-        print("Erro: digite um ID válido.")
+        print("Digite um ID válido.")
         return
 
     for produto in produtos:
         if produto["id"] == produto_id:
             produtos.remove(produto)
-            print(f"Produto '{produto['nome']}' removido com sucesso!")
+            print("Produto removido com sucesso!")
             return
-
     print("Produto não encontrado.")
 
 
 def pesquisar_produto():
-    """Pesquisa produtos pelo nome, aceitando parte do nome."""
-    nome = input("Digite o nome do produto para pesquisar: ").strip().lower()
+    """Turma A: pesquisa produto pelo nome."""
+    nome = input("Digite o nome do produto: ").strip().lower()
+    encontrados = [p for p in produtos if nome in p["nome"].lower()]
 
-    if not nome:
-        print("Digite um nome para realizar a pesquisa.")
-        return
-
-    encontrados = [
-        produto for produto in produtos
-        if nome in produto["nome"].lower()
-    ]
-
-    print("\n--- RESULTADO DA PESQUISA ---")
+    print("\n--- RESULTADO ---")
     if not encontrados:
         print("Nenhum produto encontrado.")
         return
@@ -104,14 +71,13 @@ def pesquisar_produto():
 
 
 def registrar_venda():
-    """Registra uma venda simples para permitir o relatório de vendas."""
+    """Registra uma venda para o relatório da Turma A."""
     listar_produtos()
-
     try:
         produto_id = int(input("Digite o ID do produto vendido: "))
         quantidade = int(input("Digite a quantidade: "))
     except ValueError:
-        print("Erro: digite valores válidos.")
+        print("Digite valores válidos.")
         return
 
     if quantidade <= 0:
@@ -121,58 +87,38 @@ def registrar_venda():
     for produto in produtos:
         if produto["id"] == produto_id:
             total = produto["preco"] * quantidade
-            vendas.append({
-                "data": datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
-                "produto": produto["nome"],
-                "quantidade": quantidade,
-                "preco_unitario": produto["preco"],
-                "total": total,
-            })
-            print(f"Venda registrada! Total: R$ {total:.2f}")
+            vendas.append({"produto": produto["nome"], "quantidade": quantidade, "total": total})
+            print(f"Venda registrada: R$ {total:.2f}")
             return
-
     print("Produto não encontrado.")
 
 
 def relatorio_vendas():
-    """Exibe o relatório de todas as vendas registradas."""
+    """Turma A: mostra o relatório de vendas."""
     print("\n--- RELATÓRIO DE VENDAS ---")
-
     if not vendas:
         print("Nenhuma venda registrada.")
         return
 
-    total_vendido = 0
-
+    total = 0
     for venda in vendas:
-        print(
-            f"Data: {venda['data']} | "
-            f"Produto: {venda['produto']} | "
-            f"Qtd: {venda['quantidade']} | "
-            f"Total: R$ {venda['total']:.2f}"
-        )
-        total_vendido += venda["total"]
-
-    print(f"\nTOTAL VENDIDO: R$ {total_vendido:.2f}")
+        print(f"Produto: {venda['produto']} | Qtd: {venda['quantidade']} | Total: R$ {venda['total']:.2f}")
+        total += venda["total"]
+    print(f"TOTAL VENDIDO: R$ {total:.2f}")
 
 
 def menu():
-    """Menu principal do Sistema Lanchonete."""
     while True:
-        print("\n==============================")
-        print("       SISTEMA LANCHONETE")
-        print("       3º BIMESTRE")
-        print("==============================")
+        print("\n===== SISTEMA LANCHONETE - TURMA A =====")
         print("1 - Listar produtos")
-        print("2 - Alterar preço de produto")
+        print("2 - Alterar preço")
         print("3 - Remover produto")
         print("4 - Pesquisar produto por nome")
         print("5 - Registrar venda")
         print("6 - Relatório de vendas")
         print("0 - Sair")
 
-        opcao = input("Escolha uma opção: ").strip()
-
+        opcao = input("Escolha: ")
         if opcao == "1":
             listar_produtos()
         elif opcao == "2":
@@ -186,10 +132,10 @@ def menu():
         elif opcao == "6":
             relatorio_vendas()
         elif opcao == "0":
-            print("Sistema encerrado. Até logo!")
+            print("Programa encerrado.")
             break
         else:
-            print("Opção inválida. Tente novamente.")
+            print("Opção inválida.")
 
 
 if __name__ == "__main__":
