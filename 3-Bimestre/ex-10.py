@@ -1,14 +1,15 @@
 senha_correta = '1234'
-attempts = 0
+tentativas = 0
 
-while attempts < 3:
+while tentativas < 3:
     senha = input('Digite a senha: ')
+
     if senha == senha_correta:
         print('Acesso permitido')
         break
     else:
-        attempts += 1
         print('Senha incorreta')
+        tentativas = tentativas + 1
 
-if attempts == 3:
+if tentativas == 3:
     print('Acesso bloqueado')
