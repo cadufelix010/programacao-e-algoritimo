@@ -1,7 +1,8 @@
-n = int(input('Escolha um número inteiro: '))
+n = int(input('Digite um número: '))
+
 if n > 0:
-    print(f'O número {n} é positivo')
+    print('Positivo')
 elif n < 0:
-    print(f'O número {n} é negativo')
+    print('Negativo')
 else:
-    print('O número é igual a 0')
+    print('Zero')
