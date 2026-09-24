@@ -1,18 +1,26 @@
+/*
+Aluno: Carlos Eduardo Félix
+3º Bimestre
+Exercício 03 - Contagem de 1 até N
+*/
 #include <iostream>
 using namespace std;
 
 int main() {
-    int n, contador = 1;
-    cout << "Digite um numero positivo: ";
-    cin >> n;
+    int numero;
+    int contador = 1;
 
-    if (n > 0) {
-        while (contador <= n) {
-            cout << contador << endl;
-            contador++;
-        }
-    } else {
-        cout << "Numero invalido";
+    cout << "Digite um numero inteiro positivo: ";
+    cin >> numero;
+
+    if (numero <= 0) {
+        cout << "Numero invalido." << endl;
+        return 0;
+    }
+
+    while (contador <= numero) {
+        cout << contador << endl;
+        contador++;
     }
 
     return 0;
