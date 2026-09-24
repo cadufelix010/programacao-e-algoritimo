@@ -1,9 +1,15 @@
-n = int(input('Digite um número positivo: '))
+"""
+Aluno: Carlos Eduardo Félix
+3º Bimestre
+Exercício 03 - Contagem de 1 até N
+"""
+
+numero = int(input("Digite um número inteiro positivo: "))
 contador = 1
 
-if n > 0:
-    while contador <= n:
+if numero > 0:
+    while contador <= numero:
         print(contador)
-        contador = contador + 1
+        contador += 1
 else:
-    print('Número inválido')
+    print("Número inválido.")
