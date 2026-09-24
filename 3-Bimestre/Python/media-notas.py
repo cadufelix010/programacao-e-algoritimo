@@ -1,15 +1,22 @@
+"""
+Aluno: Carlos Eduardo Félix
+3º Bimestre
+Exercício 06 - Média de notas
+"""
+
 soma = 0
-contador = 0
+quantidade = 0
 
-nota = float(input('Digite uma nota de 0 a 10: '))
+nota = float(input("Digite uma nota entre 0 e 10: "))
 
-while nota >= 0 and nota <= 10:
-    soma = soma + nota
-    contador = contador + 1
-    nota = float(input('Digite outra nota ou um número fora de 0 a 10 para parar: '))
+while 0 <= nota <= 10:
+    soma += nota
+    quantidade += 1
+    nota = float(
+        input("Digite outra nota ou um valor inválido para encerrar: ")
+    )
 
-if contador > 0:
-    media = soma / contador
-    print('Média:', media)
+if quantidade > 0:
+    print("Média das notas:", soma / quantidade)
 else:
-    print('Nenhuma nota válida')
+    print("Nenhuma nota válida foi digitada.")
