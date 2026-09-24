@@ -1,12 +1,19 @@
-n = int(input('Digite um número positivo: '))
-soma = 0
-contador = 1
+"""
+Aluno: Carlos Eduardo Félix
+3º Bimestre
+Exercício 04 - Soma dos números pares
+"""
 
-if n > 0:
-    while contador <= n:
+numero = int(input("Digite um número inteiro positivo: "))
+contador = 1
+soma = 0
+
+if numero > 0:
+    while contador <= numero:
         if contador % 2 == 0:
-            soma = soma + contador
-        contador = contador + 1
-    print('Soma dos números pares:', soma)
+            soma += contador
+        contador += 1
+
+    print("Soma dos pares:", soma)
 else:
-    print('Número inválido')
+    print("Número inválido.")
