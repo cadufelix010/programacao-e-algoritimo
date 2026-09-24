@@ -1,27 +1,36 @@
+/*
+Aluno: Carlos Eduardo Félix
+3º Bimestre
+Exercício 07 - Contador de positivos, negativos e zeros
+*/
 #include <iostream>
 using namespace std;
 
 int main() {
-    int n, contador = 1;
-    int positivos = 0, negativos = 0, zeros = 0;
+    int numero;
+    int contador = 1;
+    int positivos = 0;
+    int negativos = 0;
+    int zeros = 0;
 
     while (contador <= 10) {
-        cout << "Digite um numero: ";
-        cin >> n;
+        cout << "Digite o " << contador << "o numero: ";
+        cin >> numero;
 
-        if (n > 0)
+        if (numero > 0) {
             positivos++;
-        else if (n < 0)
+        } else if (numero < 0) {
             negativos++;
-        else
+        } else {
             zeros++;
+        }
 
         contador++;
     }
 
     cout << "Positivos: " << positivos << endl;
     cout << "Negativos: " << negativos << endl;
-    cout << "Zeros: " << zeros;
+    cout << "Zeros: " << zeros << endl;
 
     return 0;
 }
