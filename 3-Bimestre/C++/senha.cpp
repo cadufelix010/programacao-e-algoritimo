@@ -1,9 +1,14 @@
+/*
+Aluno: Carlos Eduardo Félix
+3º Bimestre
+Exercício 10 - Sistema simples de senha
+*/
 #include <iostream>
 using namespace std;
 
 int main() {
-    string senha;
-    string senhaCorreta = "1234";
+    int senha;
+    const int senhaCorreta = 1234;
     int tentativas = 0;
 
     while (tentativas < 3) {
@@ -11,16 +16,14 @@ int main() {
         cin >> senha;
 
         if (senha == senhaCorreta) {
-            cout << "Acesso permitido";
-            break;
-        } else {
-            cout << "Senha incorreta" << endl;
-            tentativas++;
+            cout << "Acesso liberado." << endl;
+            return 0;
         }
+
+        tentativas++;
+        cout << "Senha incorreta." << endl;
     }
 
-    if (tentativas == 3)
-        cout << "Acesso bloqueado";
-
+    cout << "Acesso bloqueado." << endl;
     return 0;
 }
