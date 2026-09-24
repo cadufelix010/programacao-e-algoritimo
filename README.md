@@ -1,36 +1,60 @@
+# Programação e Algoritmos
 
-💻 Programação e Algoritmos | Construindo a Lógica
+Repositório de atividades e projetos desenvolvidos no 1º ano do curso técnico.
 
-Bem-vindo(a) ao repositório de Programação e Algoritmos! Este espaço foi criado para documentar toda a minha jornada desenvolvendo o raciocínio lógico e resolvendo problemas matemáticos e cotidianos através do código no 1º ano técnico da ETEC.
+**Aluno:** Carlos Eduardo Félix
 
-⸻
+## Conteúdos estudados
 
-🛠️ Tecnologias & Ferramentas
+- Lógica de programação
+- Variáveis e operadores
+- Estruturas condicionais
+- Estruturas de repetição
+- C++
+- Python
+- Funções
+- Listas e dicionários
+- Arquivos JSON
+- Desenvolvimento de programas no terminal
 
-No desenvolvimento da lógica e dos primeiros programas, utilizo:
+## Organização
 
-* Linguagens de Aprendizado: Portugol (VisualG / Portugol Studio) e C++.
-* Ambientes de Desenvolvimento: VS Code, VisualG e Portugol Studio.
-* Paradigma: Programação Estruturada e Sequencial.
+### 1º Bimestre
+Atividades iniciais de lógica e programação.
 
-⸻
+### 2º Bimestre
+Exercícios de programação e evolução dos conteúdos.
 
-🚀 Meus Focos de Estudo & Aplicação
+### 3º Bimestre
+O 3º bimestre contém:
 
-* Lógica de Programação: Entendimento de variáveis, constantes, operadores matemáticos e operadores lógicos.
-* Estruturas de Decisão: Controle de fluxo utilizando estruturas condicionais (if/else).
-* Estruturas de Repetição: Desenvolvimento de algoritmos com laços (for, while e do-while) para automatizar tarefas e resolver problemas.
+- Lista com 10 exercícios em C++
+- Conversão dos 10 exercícios para Python
+- Resumo de Python x C++
+- Sistema Lanchonete com arquivo JSON
+- Funcionalidades da Turma A:
+  - Alterar preço de produto
+  - Remover produto
+  - Pesquisar produto por nome
+  - Relatório de vendas
 
-⸻
+Acesse a pasta `3-Bimestre` para visualizar as atividades.
 
-📂 Meus Projetos & Exercícios em Destaque
+## Ferramentas
 
-1. Lógica em Portugol – 1º Bimestre: Exercícios e algoritmos desenvolvidos durante o início do curso.
-2. Exercícios Práticos em C++: Programas criados para praticar estruturas condicionais, repetição e resolução de problemas.
+- Visual Studio Code
+- C++
+- Python
+- Git e GitHub
 
-⸻
+## Como executar Python
 
-📫 Contato
+```bash
+python arquivo.py
+```
 
-* GitHub: https://github.com/Cadufelix010
-* E-mail: Carlos2019felix@gmail.com
+No Windows também pode ser usado:
+
+```bash
+py arquivo.py
+```
